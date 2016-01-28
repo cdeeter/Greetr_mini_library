@@ -1,6 +1,6 @@
 /*
     GREETR Library
-     - When given a first name, last name, and optional language, it generates formal and informal greetings
+     - When given a first name, last name, and language, it generates formal and informal greetings
      - Supports English and Spanish ~ also added French, German, and Swedish
      - G$() structure to make it easier to type
      - Supports jQuery
@@ -9,11 +9,9 @@
 // Safe code structure - place code in an IIFE
 (function(global, $) {
     
-    // Set up G$() structure
+    // Return function constructor so that we don't have to use
+    // the Greetr object with the "new" keyword everytime
     var Greetr = function(firstName, lastName, language) {
-        
-        // Return function constructor so that we don't have to
-        // set up the object with the "new" keyword everytime
         return new Greetr.init(firstName, lastName, language);
     };
     
